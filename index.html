@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mrs.Aman 💖</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+}
+
+#yes {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#no {
+    background-color: #ddd;
+    position: absolute;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Music -->
+<audio id="music" autoplay loop>
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mp3">
+</audio>
+
+<div class="card">
+    <h2>💖 Will you Love me  <span id="name">Amanullah</span>? 💖</h2>
+    
+    <button id="yes">Yes 💕</button>
+    <button id="no">No 😜</button>
+</div>
+
+<script>
+// ✏️ Change name here
+document.getElementById("name").innerText = "Amanullah";
+
+// 🎯 YES button
+document.getElementById("yes").onclick = function() {
+    alert("Yayyy ❤️🥰 I knew it!");
+};
+
+// 🏃 NO button runs away
+let noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", moveButton);
+
+function moveButton() {
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 50);
+
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+// 📱 Fix music autoplay for mobile
+document.body.addEventListener("click", function() {
+    document.getElementById("music").play();
+});
+</script>
+
+</body>
+</html>
